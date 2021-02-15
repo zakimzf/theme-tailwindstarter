@@ -1,7 +1,6 @@
 {
-    "name": "ghost-starter-theme",
-    "description": "A custom theme for ghost",
-    "demo": "https://starter.ghost.io",
+    "name": "ghost-tailwind-starter-theme",
+    "description": "A starter theme for Ghost using Tailwind CSS",
     "version": "1.0.0",
     "engines": {
         "ghost": ">=3.0.0",
@@ -21,9 +20,9 @@
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi"
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Pine",
+        "email": "janis@usepine.com",
+        "url": "https://www.usepine.com"
     },
     "gpm": {
         "type": "theme",
@@ -39,10 +38,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Starter.git"
+        "url": "https://github.com/usepine/theme-tailwindstarter.git"
     },
-    "bugs": "https://github.com/TryGhost/Starter/issues",
-    "contributors": "https://github.com/TryGhost/Starter/graphs/contributors",
+    "bugs": "https://github.com/usepine/theme-tailwindstarter/issues",
+    "contributors": "https://github.com/usepine/theme-tailwindstarter/graphs/contributors",
     "devDependencies": {
         "autoprefixer": "9.8.3",
         "cssnano": "4.1.10",
@@ -83,5 +82,10 @@
                 "width": 2000
             }
         }
+    },
+    "dependencies": {
+        "@tailwindcss/forms": "^0.2.1",
+        "@tailwindcss/typography": "^0.4.0",
+        "tailwindcss": "^2.0.3"
     }
 }

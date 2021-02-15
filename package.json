@@ -48,7 +48,6 @@
         "gscan": "3.5.4",
         "gulp": "4.0.2",
         "gulp-livereload": "4.0.2",
-        "gulp-postcss": "8.0.0",
         "gulp-sourcemaps": "2.6.5",
         "gulp-uglify": "3.0.2",
         "gulp-util": "3.0.8",
@@ -86,6 +85,8 @@
     "dependencies": {
         "@tailwindcss/forms": "^0.2.1",
         "@tailwindcss/typography": "^0.4.0",
+        "gulp-postcss": "9",
+        "postcss": "^8.2.6",
         "tailwindcss": "^2.0.3"
     }
 }

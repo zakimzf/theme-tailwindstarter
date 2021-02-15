@@ -1,35 +1,25 @@
 {{!< default}}
 
-<div class="gh-page">
-    <div class="gh-container">
+{{#tag}}
+<section class="my-24 text-center">
+<h1 class="text-4xl">
+    {{name}}
+</h1>
+<p class="text-2xl">
+    {{#if description}}
+        {{description}}
+    {{else}}
+        A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+    {{/if}}
+</p>
+</section>
+{{/tag}}
 
-        {{#tag}}
-        <header class="gh-page-head">
+<section class="space-y-8 mb-8">
+{{#foreach posts visibility="all"}}
 
-            <h1>{{name}}</h1>
+    {{> "card"}} {{!-- partials/card.hbs --}}
 
-            <p>
-                {{#if description}}
-                    {{description}}
-                {{else}}
-                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-                {{/if}}
-            </p>
+{{/foreach}}
+</section>
 
-            {{#if feature_image}}
-                <img class="gh-page-image" src="{{feature_image}}" alt="{{name}}" />
-            {{/if}}
-
-        </header>
-        {{/tag}}
-
-        <div class="gh-postfeed">
-        {{#foreach posts visibility="all"}}
-
-            {{> "card"}} {{!-- partials/card.hbs --}}
-
-        {{/foreach}}
-        </div>
-
-    </div>
-</div>

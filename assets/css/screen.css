@@ -8,6 +8,35 @@ h1 {
     @apply text-xl font-extrabold tracking-tight;
 }
 
+#post-content p {
+    @apply py-6
+}
+
+#post-content h1,
+#post-content h2,
+#post-content h3,
+#post-content h4,
+#post-content h5,
+#post-content h6 {
+    @apply py-2 font-sans
+}
+
+#post-content blockquote {
+    @apply border-l-4 border-green-500 italic my-8 pl-8 md:pl-12
+}
+
+#post-content ol li {
+    @apply py-3
+}
+
+pre {
+    @apply bg-gray-900 rounded text-white font-mono text-base p-2 md:p-4
+}
+
+pre code {
+    @apply break-words whitespace-pre-wrap
+}
+
 svg {
     @apply w-6 h-6;
 }

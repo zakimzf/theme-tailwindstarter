@@ -1,15 +1,16 @@
 {{!< default}}
 
-<div class="gh-page">
-    <div class="gh-container">
+<section class="my-24 text-center">
+<h1 class="text-4xl">
+    {{@site.title}}
+</h1>
+<p class="text-2xl">{{@site.description}}</p>
+</section>
 
-        <div class="gh-postfeed">
-        {{#foreach posts visibility="all"}}
+<section class="space-y-8 mb-8">
+{{#foreach posts visibility="all"}}
 
-            {{> "card"}} {{!-- partials/card.hbs --}}
+    {{> "card"}} {{!-- partials/card.hbs --}}
 
-        {{/foreach}}
-        </div>
-
-    </div>
-</div>
+{{/foreach}}
+</section>

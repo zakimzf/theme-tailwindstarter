@@ -1,62 +1,64 @@
 {{!< default}}
 
 {{#post}}
+<div class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal">
 
-<article class="gh-article {{post_class}}">
+    <!--Title-->
+    <div>
+        <p class="text-base md:text-sm text-green-500 font-bold">&lt; <a href="{{@site.url}}"
+                class="text-base md:text-sm text-green-500 font-bold no-underline hover:underline">
+                BACK TO BLOG</a></p>
+        <h1 class="font-bold break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">
+            {{title}}
+        </h1>
+        <p class="text-sm md:text-base font-normal text-gray-600">
+            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="YYYY-MM-DD"}}</time>
+        </p>
+    </div>
 
-    <header class="gh-header gh-canvas">
-        <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-        <h1 class="gh-title">{{title}}</h1>
 
-        {{#if custom_excerpt}}
-        <p class="gh-excerpt">{{custom_excerpt}}</p>
-        {{/if}}
+    <!--Post Content-->
 
-        {{#if feature_image}}
-        <img class="gh-feature-image"
-            srcset="{{img_url feature_image size="s"}} 300w,
-                    {{img_url feature_image size="m"}} 600w,
-                    {{img_url feature_image size="l"}} 1000w,
-                    {{img_url feature_image size="xl"}} 2000w"
-            sizes="(max-width: 1000px) 1000px, 2000px"
-            loading="lazy"
-            src="{{img_url feature_image size="xl"}}"
-            alt="{{title}}"
-        />
-        {{/if}}
-    </header>
-
-    <div class="gh-content gh-canvas">
+    <section id="post-content" class="my-12">
         {{content}}
+    </section>
+
+    <!--/ Post Content-->
+
+</div>
+
+<!--Tags -->
+<div class="text-base md:text-sm text-gray-500 px-4 py-6">
+    Tags:
+    {{#foreach tags}}
+        <a href="{{url}}" class="text-base md:text-sm text-green-500 no-underline hover:underline">{{name}}</a>
+    {{/foreach}}
+
+</div>
+
+<!--Divider-->
+<hr class="border-b-2 border-gray-400 mb-8 mx-4">
+
+<!--Next & Prev Links-->
+<div class="flex justify-between content-center px-4 pb-12">
+    <div class="text-left">
+        <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Previous Post</span><br>
+        {{#prev_post}}
+        <p><a href="{{url}}"
+                class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">{{title}}</a></p>
+        {{/prev_post}}
     </div>
-
-    <footer class="gh-footer gh-canvas">
-
-        <div class="gh-post-authors">
-            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
-        </div>
-
-        {{!--
-        <section class="gh-post-comments">
-            If you want to embed comments, this is a good place to do it!
-        </section>
-        --}}
-
-    </footer>
-
-</article>
-
-<aside class="gh-readmore">
-    <div class="gh-readmore-inner gh-container">
-        <div class="gh-readmore-next">
-            {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
-        </div>
-        <div class="gh-readmore-prev">
-            {{#prev_post}}<a href="{{url}}">
-                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
-            </a>{{/prev_post}}
-        </div>
+    <div class="text-right">
+        <span class="text-xs md:text-sm font-normal text-gray-600">Next Post &gt;</span><br>
+        {{#next_post}}
+        <p><a href="{{url}}"
+                class="break-normal text-base md:text-sm text-green-500 font-bold no-underline hover:underline">{{title}}</a></p>
+        {{/next_post}}
     </div>
-</aside>
+</div>
+
+
+
+
 
 {{/post}}

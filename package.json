@@ -43,8 +43,8 @@
     "bugs": "https://github.com/usepine/theme-tailwindstarter/issues",
     "contributors": "https://github.com/usepine/theme-tailwindstarter/graphs/contributors",
     "devDependencies": {
-        "autoprefixer": "9.8.3",
-        "cssnano": "4.1.10",
+        "autoprefixer": "10.4.14",
+        "cssnano": "5.1.15",
         "gscan": "3.5.4",
         "gulp": "4.0.2",
         "gulp-livereload": "4.0.2",
@@ -54,7 +54,7 @@
         "gulp-watch": "5.0.1",
         "gulp-zip": "5.0.2",
         "postcss-color-mod-function": "3.0.3",
-        "postcss-easy-import": "3.0.0"
+        "postcss-easy-import": "4.0.0"
     },
     "browserslist": [
         "defaults"
